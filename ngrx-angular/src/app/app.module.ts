@@ -9,12 +9,16 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { counterReducer } from './shared/store/counter.reducer';
 import { CounterbottonComponent } from './component/counterbotton/counterbotton.component';
 import { CounterdisplayComponent } from './component/counterdisplay/counterdisplay.component';
+import { CustomIncrementComponent } from './component/custom-increment/custom-increment.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterbottonComponent,
-    CounterdisplayComponent
+    CounterdisplayComponent,
+    CustomIncrementComponent
 
   ],
   imports: [
@@ -22,7 +26,9 @@ import { CounterdisplayComponent } from './component/counterdisplay/counterdispl
     AppRoutingModule,
     StoreModule.forRoot({counter: counterReducer}),
     EffectsModule.forRoot([]),
-    StoreRouterConnectingModule.forRoot()
+    StoreRouterConnectingModule.forRoot(),
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent] 

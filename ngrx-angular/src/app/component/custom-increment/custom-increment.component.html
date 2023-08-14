@@ -1,0 +1,17 @@
+<form class="input">
+    <mat-form-field class="custon-increment">
+      <mat-label>Custom increment</mat-label>
+      <input matInput name="customInput" [(ngModel)]="customInput" type="number" >
+    </mat-form-field>
+
+    <mat-form-field class="custon-increment">
+      <mat-label>Action type</mat-label>
+      <mat-select [(ngModel)]="actionType" name="actionType" >
+        <mat-option value="add"> Add </mat-option>
+        <mat-option value="remove"> Remove</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    
+    <button mat-raised-button color="primary" (click)="customIncrement()">Calculate</button>    
+</form>
