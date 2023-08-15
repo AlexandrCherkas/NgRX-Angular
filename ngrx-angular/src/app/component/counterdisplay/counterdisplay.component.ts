@@ -1,21 +1,27 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
 import { Store } from '@ngrx/store';
+import { ICounterModal } from 'src/app/shared/store/counter.model'; 
+import { Observable } from "rxjs"
 
 @Component({
   selector: 'app-counterdisplay',
   templateUrl: './counterdisplay.component.html',
   styleUrls: ['./counterdisplay.component.scss']
 })
-export class CounterdisplayComponent implements OnInit{
+export class CounterdisplayComponent implements OnInit, OnDestroy{
 
-  public counterDisplay!: number;
+  public counterDisplay: number;
+  public chanelName: string;
+  counter$: Observable<ICounterModal>
 
   constructor(
-    private store: Store <{counter: {counter: number}}>
+    private store: Store <{counter: ICounterModal}>
   ){}
 
   ngOnInit(): void {
-    this.store.select('counter')
-      .subscribe( num => this.counterDisplay = num.counter)
+    this.counter$ = this.store.select('counter');
+  }
+
+  ngOnDestroy(): void {
   }
 }

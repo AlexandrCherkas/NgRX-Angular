@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { customIncrement } from 'src/app/shared/store/counter.actions';
-import { Effect } from 'src/app/shared/Interfaces/state';
+import { Effect, ICounterModal } from 'src/app/shared/store/counter.model'; 
 
 @Component({
   selector: 'app-custom-increment',
@@ -12,7 +12,7 @@ export class CustomIncrementComponent {
   public customInput: number;
   public actionType: string = Effect.ADD;
 
-  constructor( private store: Store<{counter: {counter: number}}>) {}
+  constructor( private store: Store<{counter: ICounterModal}>) {}
 
   public customIncrement() {
     if (this.customInput) {
