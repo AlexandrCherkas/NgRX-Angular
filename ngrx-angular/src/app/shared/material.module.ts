@@ -17,8 +17,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [],

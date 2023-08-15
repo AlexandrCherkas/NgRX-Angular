@@ -12,6 +12,7 @@ import { CounterdisplayComponent } from './component/counterdisplay/counterdispl
 import { CustomIncrementComponent } from './component/custom-increment/custom-increment.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
